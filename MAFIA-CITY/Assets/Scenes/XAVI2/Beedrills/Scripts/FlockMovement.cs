@@ -5,38 +5,46 @@ using UnityEngine;
 public class FlockMovement : MonoBehaviour
 {
 
-    public Vector3 cohesionVec;
-    public Vector3 separationVec;
-    public Vector3 alignVec;
+    [SerializeField] private Vector3 cohesionVec;
+    [SerializeField] private Vector3 separationVec;
+    [SerializeField] private Vector3 alignVec;
 
-    public int nearBees;
+    [SerializeField] private int nearBees;
 
-    public float speed;
+    [SerializeField] private float speed;
     public FlockingManager flockManager;
 
 
-    public Vector3 direction;
+    [SerializeField] private Vector3 direction;
 
-    public float freq;
+    [SerializeField] private float freq;
+
+    public float cohesionScale;
+    public float separationScale;
+    public float alignScale;
+
 
     private void Update()
     {
         freq += Time.deltaTime;
-        if (freq > 0.25)
+        if (freq > flockManager.frequency)
         {
-            freq -= 0.25f;
+            freq -= flockManager.frequency;
 
             SetDir();
         }
 
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), flockManager.rotationSpeed * Time.deltaTime);
-        transform.Translate(0.0f, 0.0f, Time.deltaTime * flockManager.speed);
+        transform.Translate(0.0f, 0.0f, Time.deltaTime * speed);
     }
 
     private void SetDir()
     {
         nearBees = 0;
-        
+        alignVec = Vector3.zero;
+        cohesionVec = Vector3.zero;
+        separationVec = Vector3.zero;
+
         foreach (GameObject bid in flockManager.beesList)
         {
             if (bid != gameObject)
@@ -46,7 +54,7 @@ public class FlockMovement : MonoBehaviour
                 {
                     cohesionVec += bid.transform.position;
 
-                    separationVec -= (transform.position - bid.transform.position) / (distance * distance) * 0.5f;
+                    separationVec -= (transform.position - bid.transform.position) / (distance * distance);
                     alignVec += direction;
 
                     nearBees++;
@@ -63,7 +71,7 @@ public class FlockMovement : MonoBehaviour
             cohesionVec = (cohesionVec / nearBees - transform.position).normalized * flockManager.speed;
         }
 
-        direction = (cohesionVec + alignVec + separationVec).normalized * flockManager.speed;
+        direction = (cohesionVec* flockManager.cohesionScale + alignVec* flockManager.alignScale + separationVec* flockManager.separationScale).normalized * flockManager.speed;
     }
 
 }

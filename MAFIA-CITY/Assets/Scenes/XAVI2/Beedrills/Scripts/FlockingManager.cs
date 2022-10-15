@@ -17,6 +17,14 @@ public class FlockingManager : MonoBehaviour
 
     public float rotationSpeed;
 
+    public float cohesionScale;
+    public float separationScale;
+    public float alignScale;
+
+    private FlockMovement activeFlockMovement;
+
+    public float frequency;
+
     void Start()
     {
         for(int i = 0; i < beesNum; i++)
@@ -24,7 +32,12 @@ public class FlockingManager : MonoBehaviour
             Vector3 randomPos = new Vector3(Random.Range(minRange, maxRange), Random.Range(minRange, maxRange), Random.Range(minRange, maxRange));
             GameObject bid = Instantiate(bee);
             bid.transform.position = transform.position + randomPos;
-            bid.GetComponent<FlockMovement>().flockManager = this;
+            activeFlockMovement = bid.GetComponent<FlockMovement>();
+            activeFlockMovement.flockManager = this;
+           // activeFlockMovement.cohesionScale = cohesionScale;
+           // activeFlockMovement.separationScale = separationScale;
+           // activeFlockMovement.alignScale = alignScale;
+            //activeFlockMovement.frequency = frequency;
             beesList.Add(bid);
         }
     }
