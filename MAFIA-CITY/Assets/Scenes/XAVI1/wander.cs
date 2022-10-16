@@ -43,7 +43,7 @@ public class wander : MonoBehaviour
         
         rot = Quaternion.AngleAxis(ang, Vector3.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * Velrot);
-
+       
        // freq += Time.deltaTime;
         //if (a == agent.transform.position)
         //{
