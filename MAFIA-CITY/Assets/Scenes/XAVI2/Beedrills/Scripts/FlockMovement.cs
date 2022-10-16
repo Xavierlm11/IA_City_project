@@ -9,7 +9,12 @@ public class FlockMovement : MonoBehaviour
     [SerializeField] private Vector3 separationVec;
     [SerializeField] private Vector3 alignVec;
 
+    [SerializeField] private Vector3 seekVec;
+    [SerializeField] private Vector3 furtherVec;
+
+
     [SerializeField] private int nearBees;
+    [SerializeField] private int nearRunners;
 
     [SerializeField] private float speed;
     public FlockingManager flockManager;
@@ -19,9 +24,9 @@ public class FlockMovement : MonoBehaviour
 
     [SerializeField] private float freq;
 
-    public float cohesionScale;
-    public float separationScale;
-    public float alignScale;
+    public RunnerManager runnerManager;
+
+    public GameObject beeSpawn;
 
 
     private void Update()
@@ -41,26 +46,29 @@ public class FlockMovement : MonoBehaviour
     private void SetDir()
     {
         nearBees = 0;
+        nearRunners = 0;
         alignVec = Vector3.zero;
         cohesionVec = Vector3.zero;
         separationVec = Vector3.zero;
 
-        foreach (GameObject bid in flockManager.beesList)
+        seekVec = Vector3.zero;
+        furtherVec = Vector3.zero;
+
+        foreach (GameObject bee in flockManager.beesList)
         {
-            if (bid != gameObject)
+            if (bee != gameObject)
             {
-                float distance = Vector3.Distance(bid.transform.position, transform.position);
+                float distance = Vector3.Distance(bee.transform.position, transform.position);
                 if (distance <= flockManager.neighbourDistance)
                 {
-                    cohesionVec += bid.transform.position;
+                    cohesionVec += bee.transform.position;
 
-                    separationVec -= (transform.position - bid.transform.position) / (distance * distance);
+                    separationVec -= (transform.position - bee.transform.position) / (distance * distance);
                     alignVec += direction;
 
                     nearBees++;
                 }
             }
-
         }
 
         if (nearBees > 0)
@@ -71,7 +79,28 @@ public class FlockMovement : MonoBehaviour
             cohesionVec = (cohesionVec / nearBees - transform.position).normalized * flockManager.speed;
         }
 
-        direction = (cohesionVec* flockManager.cohesionScale + alignVec* flockManager.alignScale + separationVec* flockManager.separationScale).normalized * flockManager.speed;
-    }
+        foreach (GameObject run in runnerManager.runnerList)
+        {
+            float distance = Vector3.Distance(run.transform.position, transform.position);
+            if (distance <= flockManager.runnerDistance)
+            {
+                seekVec += run.transform.position;
+                
 
+                nearRunners++;
+            }
+        }
+
+        if(nearRunners > 0)
+        {
+            seekVec = (seekVec / nearRunners - transform.position).normalized * flockManager.speed;
+        }
+
+        float distanceToOrigin = Vector3.Distance(transform.position, beeSpawn.transform.position);
+        furtherVec += ( beeSpawn.transform.position - transform.position) * distanceToOrigin;
+        
+        direction = (cohesionVec * flockManager.cohesionScale + alignVec * flockManager.alignScale + separationVec * flockManager.separationScale + seekVec * flockManager.seekScale + furtherVec * flockManager.furtherScale).normalized * flockManager.speed;
+
+        
+    }
 }

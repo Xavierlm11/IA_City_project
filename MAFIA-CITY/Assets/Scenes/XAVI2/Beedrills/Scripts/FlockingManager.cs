@@ -10,6 +10,8 @@ public class FlockingManager : MonoBehaviour
     public float minRange;
     public float maxRange;
     public float neighbourDistance;
+    public float runnerDistance;
+    public float originDistance;
 
     public float speed;
     public float minSpeed;
@@ -21,10 +23,18 @@ public class FlockingManager : MonoBehaviour
     public float separationScale;
     public float alignScale;
 
+
+    public float seekScale;
+    public float furtherScale;
+
     private FlockMovement activeFlockMovement;
 
     public float frequency;
     public Transform beeFolder;
+
+    [SerializeField] private RunnerManager runnerManager;
+
+    [SerializeField] private GameObject beeSpawn;
 
     void Start()
     {
@@ -35,6 +45,8 @@ public class FlockingManager : MonoBehaviour
             bid.transform.position = beeFolder.position + randomPos;
             activeFlockMovement = bid.GetComponent<FlockMovement>();
             activeFlockMovement.flockManager = this;
+            activeFlockMovement.runnerManager = runnerManager;
+            activeFlockMovement.beeSpawn = beeSpawn;
            // activeFlockMovement.cohesionScale = cohesionScale;
            // activeFlockMovement.separationScale = separationScale;
            // activeFlockMovement.alignScale = alignScale;

@@ -8,7 +8,12 @@ public class Runner : MonoBehaviour
     public NavMeshAgent agent;
     public List<GameObject> targets;
     public int activetarget;
-    public int speed;
+    public float speed;
+    public FlockingManager flockManager;
+    public RunnerManager runnerManager;
+    public int nearBees;
+
+    [SerializeField] private Vector3 beeVec;
 
     void Start()
     {
@@ -19,15 +24,42 @@ public class Runner : MonoBehaviour
 
     void Update()
     {
+         RunAway();
+    }
 
+    private void RunAway()
+    {
+        nearBees = 0;
+
+        foreach (GameObject bee in flockManager.beesList)
+        {
+            float distance = Vector3.Distance(bee.transform.position, transform.position);
+            if(distance <= runnerManager.beeDistance)
+            {
+                beeVec += bee.transform.position;
+                nearBees++;
+            }
+        }
+
+        if(nearBees > 0)
+        {
+            beeVec = (beeVec / nearBees - transform.position).normalized;
+        }
+
+        //transform.Translate(transform.position + beeVec * agent.speed * runnerManager.runAwayScale);
+        transform.Translate(beeVec * agent.speed * runnerManager.runAwayScale);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PathPoint")
         {
-            print("Contact");
-            NextPoint();
+            int index = targets.FindIndex(x => x.GetComponent<Collider>() == other);
+            if(index != -1)
+            {
+                activetarget = index;
+                NextPoint();
+            }
         }
     }
 
@@ -46,6 +78,7 @@ public class Runner : MonoBehaviour
         {
             activetarget++;
         }
+
         Seek();
     }
 }
