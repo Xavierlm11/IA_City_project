@@ -1,0 +1,8 @@
+# Made in Blockbench 2.4.0
+newmtl 0
+map_Kd goawaygreen.png
+newmtl 1
+map_Kd black_concrete.png
+newmtl 2
+map_Kd stripped_oak_log.png
+newmtl none

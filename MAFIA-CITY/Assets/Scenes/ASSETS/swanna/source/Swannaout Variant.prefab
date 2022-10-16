@@ -317,10 +317,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2315052599287924330}
   - component: {fileID: 1016714556}
-  - component: {fileID: 1016714552}
   - component: {fileID: 1016714555}
   - component: {fileID: 1016714557}
-  - component: {fileID: 1016714559}
   m_Layer: 0
   m_Name: Swannaout Variant
   m_TagString: Untagged
@@ -336,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128709532773424336}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 50}
   m_LocalScale: {x: 0.26927784, y: 0.26927784, z: 0.26927784}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -362,21 +360,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1016714552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3128709532773424336}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33aabe1a2dec93349b06e6e5dc51bc06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathCreator: {fileID: 0}
-  endOfPathInstruction: 0
-  speed: 5
 --- !u!195 &1016714555
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -413,22 +396,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1016714555}
   target: {fileID: 0}
-  Velrot: 2000
---- !u!114 &1016714559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3128709532773424336}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26f3fd003353abf4a885c70936a4651f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  vel: 7
-  Velrot: 1.88
 --- !u!1 &3191659045261747431
 GameObject:
   m_ObjectHideFlags: 0
