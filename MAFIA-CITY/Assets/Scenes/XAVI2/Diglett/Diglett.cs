@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Diglett : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class Diglett : MonoBehaviour
 
     private bool isUp;
 
+    [SerializeField] private Transform seeker;
+    [SerializeField] private float rotationSpeed;
+
     void Start()
     {
         
@@ -26,6 +30,15 @@ public class Diglett : MonoBehaviour
 
     void Update()
     {
+       // Vector3 direction = (seeker.position - transform.position);
+       // direction.y = 0;
+        
+       // Quaternion rotation = Quaternion.LookRotation(direction);
+       // // Quaternion finalRotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+       // transform.rotation = rotation;//Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+       //// transform.Rotate();
+       // //Debug.DrawLine(transform.position, seeker.position, Color.magenta, 0);
+       //// Debug.DrawLine(ground.bounds.min, ground.bounds.min + ground.bounds.size, Color.magenta, 0);
         if (isUp == true)
         {
             activeTime += Time.deltaTime;
@@ -72,6 +85,9 @@ public class Diglett : MonoBehaviour
 
         hasToAppear = true;
 
+        seeker.GetComponent<NavMeshAgent>().destination = transform.position;
+                                     
+
     }
 
     private void CheckAppear() 
@@ -88,6 +104,12 @@ public class Diglett : MonoBehaviour
         {
             anim.Play("Appear");
         }
+
+        Vector3 direction = (seeker.position - transform.position);
+        direction.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        transform.rotation = rotation;
+
     }
 
     private void CheckDisappear()
@@ -109,11 +131,10 @@ public class Diglett : MonoBehaviour
 
     private void NewPos()
     {
-        float x = Random.Range(ground.localBounds.min.x, ground.localBounds.extents.x);
-        float y = ground.transform.localPosition.y;
-        float z = Random.Range(ground.localBounds.min.z, ground.localBounds.extents.z);
+        float x = Random.Range(ground.bounds.min.x, ground.bounds.min.x + ground.bounds.size.x);
+        float z = Random.Range(ground.bounds.min.z, ground.bounds.min.z + ground.bounds.size.z);
 
-        transform.localPosition = new Vector3(x, y, z);
+        transform.position = new Vector3(x, transform.position.y, z);
     }
 
 }
