@@ -23,11 +23,6 @@ public class Diglett : MonoBehaviour
     [SerializeField] private Transform seeker;
     [SerializeField] private float rotationSpeed;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (isUp == true)
