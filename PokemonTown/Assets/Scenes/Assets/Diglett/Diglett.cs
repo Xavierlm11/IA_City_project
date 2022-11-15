@@ -30,15 +30,6 @@ public class Diglett : MonoBehaviour
 
     void Update()
     {
-       // Vector3 direction = (seeker.position - transform.position);
-       // direction.y = 0;
-        
-       // Quaternion rotation = Quaternion.LookRotation(direction);
-       // // Quaternion finalRotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-       // transform.rotation = rotation;//Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-       //// transform.Rotate();
-       // //Debug.DrawLine(transform.position, seeker.position, Color.magenta, 0);
-       //// Debug.DrawLine(ground.bounds.min, ground.bounds.min + ground.bounds.size, Color.magenta, 0);
         if (isUp == true)
         {
             activeTime += Time.deltaTime;

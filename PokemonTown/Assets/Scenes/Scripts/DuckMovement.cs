@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movement : MonoBehaviour
+public class DuckMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     [SerializeField]private GameObject target;
     private Vector3 direction;
@@ -18,7 +13,7 @@ public class movement : MonoBehaviour
     private Quaternion rot;
     private float freq = 0f;
     [SerializeField]private float Velrot;
-   // Update is called once per frame
+
 
    void Seek()
     {
@@ -30,7 +25,6 @@ public class movement : MonoBehaviour
     }
     void Update()
     {
-        //seek
         transform.rotation = Quaternion.Slerp(transform.rotation, rot,Time.deltaTime * Velrot);
         transform.position += transform.forward.normalized * vel * Time.deltaTime;
        
@@ -40,7 +34,6 @@ public class movement : MonoBehaviour
             freq -= 0.3f;
              Seek();
         }
-        // Update commands
 
     }
 }

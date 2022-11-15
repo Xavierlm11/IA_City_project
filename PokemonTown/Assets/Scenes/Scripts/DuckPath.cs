@@ -3,26 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class path : MonoBehaviour
+public class DuckPath : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     
     public NavMeshAgent agent;
     public GameObject target;
 
-    void Seek1()
+    void Seek()
     {
         agent.destination = target.transform.position;
 
     }
-    // Update is called once per frame
     void Update()
     {
-        Seek1();
-
+        Seek();
     }
 }
