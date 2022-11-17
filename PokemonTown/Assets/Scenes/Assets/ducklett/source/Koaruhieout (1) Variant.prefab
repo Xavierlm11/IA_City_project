@@ -147,7 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 6213967339909041164}
   target: {fileID: 0}
-  Velrot: 10.04
 --- !u!195 &6213967339909041164
 NavMeshAgent:
   m_ObjectHideFlags: 0
