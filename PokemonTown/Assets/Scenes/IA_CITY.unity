@@ -256,7 +256,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 0.025
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 15
   m_ObstacleAvoidanceType: 4
 --- !u!114 &19435265
 MonoBehaviour:
@@ -3786,6 +3786,10 @@ PrefabInstance:
     - target: {fileID: -7030946543959216383, guid: d87769e2b1380c5408293a470094e586, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: d87769e2b1380c5408293a470094e586, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7029948723529949830, guid: d87769e2b1380c5408293a470094e586, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7518,6 +7522,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.28
       objectReference: {fileID: 0}
+    - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
+      propertyPath: m_WalkableMask
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
       value: 
@@ -9781,7 +9789,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 0.1
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 15
   m_ObstacleAvoidanceType: 4
 --- !u!4 &2007296623 stripped
 Transform:
