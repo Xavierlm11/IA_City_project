@@ -730,6 +730,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.28
       objectReference: {fileID: 0}
+    - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
+      propertyPath: m_WalkableMask
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
       value: 
@@ -1973,6 +1977,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.28
       objectReference: {fileID: 0}
+    - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
+      propertyPath: m_WalkableMask
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
       value: 
@@ -2625,6 +2633,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.28
       objectReference: {fileID: 0}
+    - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
+      propertyPath: m_WalkableMask
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
       value: 
@@ -2835,6 +2847,10 @@ PrefabInstance:
     - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: m_Speed
       value: 2.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
+      propertyPath: m_WalkableMask
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
@@ -3798,6 +3814,10 @@ PrefabInstance:
     - target: {fileID: -7007697296758290782, guid: d87769e2b1380c5408293a470094e586, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6970007969892549494, guid: d87769e2b1380c5408293a470094e586, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6970007969892549494, guid: d87769e2b1380c5408293a470094e586, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7524,7 +7544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: m_WalkableMask
-      value: 4294967295
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
@@ -7778,7 +7798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08f8202b09c47944dab6c775203c7e10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.9
+      value: 19.799997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08f8202b09c47944dab6c775203c7e10, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7786,7 +7806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08f8202b09c47944dab6c775203c7e10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.080051
+      value: 54.88005
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08f8202b09c47944dab6c775203c7e10, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8264,7 +8284,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 4
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 15
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1367129017
 MonoBehaviour:
@@ -9040,6 +9060,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.28
       objectReference: {fileID: 0}
+    - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
+      propertyPath: m_WalkableMask
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
       value: 
@@ -9733,6 +9757,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.28
       objectReference: {fileID: 0}
+    - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
+      propertyPath: m_WalkableMask
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
       value: 
@@ -9846,7 +9874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8a25ae4fe00459429c4fe079486c4a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 24.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8a25ae4fe00459429c4fe079486c4a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9854,7 +9882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8a25ae4fe00459429c4fe079486c4a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 25.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e8a25ae4fe00459429c4fe079486c4a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10004,6 +10032,10 @@ PrefabInstance:
     - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: m_Speed
       value: 2.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213967339909041164, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
+      propertyPath: m_WalkableMask
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8013919140283782508, guid: e3577441f4339ac49b59cd5e60ca38a7, type: 3}
       propertyPath: target
