@@ -21,7 +21,7 @@ public class OldManSearch : StateMachineBehaviour
 
         ODwalk.Seek(ODBlackBoard.target);
 
-        if (Vector3.Distance(ODwalk.transform.position, ODBlackBoard.target.transform.position) < 10)
+        if (Vector3.Distance(ODwalk.transform.position, ODBlackBoard.target.transform.position) <= 5)
         {
             animator.SetTrigger("sitting");
         }
