@@ -1,34 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-public class OldManWander : StateMachineBehaviour
+
+public class OldManSearch : StateMachineBehaviour
 {
+
     private OldManWalk ODwalk;
     private OldManBlackBoard ODBlackBoard;
-
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         ODwalk = animator.GetComponent<OldManWalk>();
-        ODwalk.SetRandPostion();
         ODBlackBoard = animator.GetComponent<OldManBlackBoard>();
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        foreach(GameObject bench in ODBlackBoard.Benches)
-        if (Vector3.Distance(ODwalk.transform.position, bench.transform.position) < ODBlackBoard.DistBench)
-            {
-                ODBlackBoard.target = bench;
-                animator.SetTrigger("serch");
-            }
 
+        ODwalk.Seek(ODBlackBoard.target);
 
-        Debug.Log("aaaaaaaa");
-
+        if (Vector3.Distance(ODwalk.transform.position, ODBlackBoard.target.transform.position) < 10)
+        {
+            animator.SetTrigger("sitting");
+        }
+       
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
