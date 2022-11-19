@@ -21,7 +21,6 @@ public class IsCopFar : ConditionBase
 
     public override bool Check()
     {
-        //Debug.Log("AAAAAAAAA");
 
         bool isFar = Vector3.Distance(cop.transform.position, treasure.transform.position) > distance;
         if (isFar == false)

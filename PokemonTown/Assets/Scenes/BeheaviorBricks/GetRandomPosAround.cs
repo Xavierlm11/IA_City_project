@@ -5,7 +5,6 @@ using Pada1.BBCore.Framework;
 using Pada1.BBCore.Tasks;
 
 [Action("Vector3/GetRandomPositionAround")]
-[Help("Checks whether Cop is far from the Treasure.")]
 public class GetRandomPosAround : BasePrimitiveAction
 {
     [InParam("user")]
