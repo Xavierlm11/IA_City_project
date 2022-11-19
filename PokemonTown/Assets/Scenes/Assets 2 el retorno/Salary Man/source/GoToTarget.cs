@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SalaryMan : MonoBehaviour
+public class GoToTarget : MonoBehaviour
 {
     public NavMeshAgent navMesh;
     public Transform target;
@@ -35,7 +35,6 @@ public class SalaryMan : MonoBehaviour
             {
                 if (((x > plane.bounds.min.x) && (x < plane.bounds.min.x + plane.bounds.size.x)) && ((z > plane.bounds.min.z) && (z < plane.bounds.min.z + plane.bounds.size.z)))
                 {
-                    print("Inside");
                     isValidThisTime = false;
                 }
             }
