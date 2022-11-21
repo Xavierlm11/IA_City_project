@@ -127,6 +127,7 @@ public class Thief : MonoBehaviour
         pokeball = null;
         hasTreasure = false;
         currentVictim = null;
+        hasGoal = false;
     }
 
     public void DestroyTreasure()
@@ -137,6 +138,7 @@ public class Thief : MonoBehaviour
         pokeball = null;
         hasTreasure = false;
         hasThrown = true;
+        hasGoal = false;
         //currentVictim = null;
         //print("Destroyed");
 

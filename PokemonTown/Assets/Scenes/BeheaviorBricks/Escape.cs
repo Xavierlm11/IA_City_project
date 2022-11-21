@@ -12,6 +12,10 @@ public class Escape : BasePrimitiveAction
     [SerializeField]
     private GameObject user;
 
+    [InParam("victim")]
+    [SerializeField]
+    private GameObject victim;
+
     [InParam("runSpeed")]
     [SerializeField]
     private float runSpeed;
@@ -27,6 +31,8 @@ public class Escape : BasePrimitiveAction
         user.transform.GetComponent<NavMeshAgent>().speed = runSpeed;
         user.transform.GetComponent<Thief>().Hide();
         escapePosition = user.transform.GetComponent<Thief>().escapePos;
+
+        //victim.GetComponent<SalaryMan>().hasChecked = true;
     }
 
     public override TaskStatus OnUpdate()

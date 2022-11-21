@@ -35,32 +35,68 @@ public class SalaryMan : MonoBehaviour
         Debug.Log("Spawneedd");
     }
 
+    public bool CheckRealize()
+    {
+
+        bool hasRealizedCopy = hasRealized;
+        if (hasChecked == false)
+        {
+
+            int num = Random.Range(0, 2);
+
+                if (num == 0)
+                {
+                    hasRealizedCopy = true;
+                    hasRealized = true;
+                    Realize();
+                    Debug.Log("Realized");
+                }
+                else
+                {
+                    hasRealizedCopy = false;
+                    hasRealized = false;
+                    Debug.Log("Not Realized");
+                    //victim.GetComponent<SalaryMan>().hasChecked = true;
+                }
+
+            hasChecked = true;
+        }
+
+        return hasRealizedCopy;
+    }
+
     public void Realize()
     {
-       // hasChecked = true;
-        hasRealized = true;
-        gameObject.GetComponent<Animator>().SetTrigger("SetIdle");
+        //hasChecked = true;
+        //hasRealized = true;
+        //gameObject.GetComponent<Animator>().SetBool("IsIdle", true);
         if (Vector3.Distance(cop.transform.position, transform.position) < screamRadius)
         {
             cop.GetComponent<Policeman>().Realize();
             //print("SCREAAAAAAMM");
-            Scream();
+            Stop();
         }
     }
 
-    public void Scream()
+    public void Stop()
     {
         print("Stay Init");
-        Stay();
+        
+        StartCoroutine("Stay");
+       
         print("Stay Final");
+        //hasChecked = true;
     }
 
     IEnumerator Stay()
     {
         //target.position = gameObject.transform.position;
-        gameObject.GetComponent<NavMeshAgent>().destination = transform.position;
-        yield return new WaitForSeconds(20);
-
+        gameObject.GetComponent<Animator>().SetBool("IsIdle", true);
+        gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+        yield return new WaitForSeconds(3);
+        gameObject.GetComponent<Animator>().SetBool("IsIdle", false);
+        gameObject.GetComponent<NavMeshAgent>().isStopped = false;
+        hasRealized = false;
     }
 
 

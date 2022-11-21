@@ -17,7 +17,8 @@ public class WalkingSalaryMan : StateMachineBehaviour
     {
         if (Vector3.Distance(salaryMan.target.position, salaryMan.transform.position) < salaryMan.targetRadius)
         {
-            animator.SetTrigger("SetIdle");
+            //animator.SetBool("IsIdle", true);
+            animator.gameObject.GetComponent<SalaryMan>().Stop();
         }
     }
 

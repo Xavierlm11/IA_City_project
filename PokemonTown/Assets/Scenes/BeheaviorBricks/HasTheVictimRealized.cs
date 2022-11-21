@@ -17,30 +17,33 @@ public class HasTheVictimRealized : ConditionBase
 
     public override bool Check()
     {
-        bool hasRealized = false;
+        bool getHasRealized = victim.GetComponent<SalaryMan>().CheckRealize();
 
-        int num = Random.Range(0, 1);
-        Debug.Log(victim.name);
+        //int num = Random.Range(0, 2);
+        //Debug.Log(victim.name);
 
-        if (victim.GetComponent<SalaryMan>().hasChecked==false)
-        {
-            if (num == 0)
-            {
-                hasRealized = true;
-                victim.GetComponent<SalaryMan>().Realize();
-                Debug.Log("Realized");
-            }
-            else
-            {
-                hasRealized = false;
-                Debug.Log("Not Realized");
-                //victim.GetComponent<SalaryMan>().hasChecked = true;
-            }
 
-           // victim.GetComponent<SalaryMan>().hasChecked = true;
-        }
         
 
-        return hasRealized;
+        //if (victim.GetComponent<SalaryMan>().hasChecked==false)
+        //{
+        //    if (num == 0)
+        //    {
+        //        hasRealized = true;
+        //        victim.GetComponent<SalaryMan>().Realize();
+        //        Debug.Log("Realized");
+        //    }
+        //    else
+        //    {
+        //        hasRealized = false;
+        //        Debug.Log("Not Realized");
+        //        //victim.GetComponent<SalaryMan>().hasChecked = true;
+        //    }
+
+        //   //victim.GetComponent<SalaryMan>().hasChecked = true;
+        //}
+        
+
+        return getHasRealized;
     }
 }
