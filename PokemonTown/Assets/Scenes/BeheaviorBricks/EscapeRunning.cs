@@ -5,8 +5,8 @@ using Pada1.BBCore.Framework;
 using Pada1.BBCore.Tasks;
 using UnityEngine.AI;
 
-[Action("Escape")]
-public class Escape : BasePrimitiveAction
+[Action("Escape Running")]
+public class EscapeRunning : BasePrimitiveAction
 {
     [InParam("user")]
     [SerializeField]

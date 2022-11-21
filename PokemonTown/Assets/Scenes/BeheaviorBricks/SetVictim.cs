@@ -12,15 +12,20 @@ public class SetVictim : BasePrimitiveAction
     private GameObject user;
 
     [OutParam("victim")]
+    [SerializeField]
     public GameObject victim;
 
     [OutParam("treasure")]
-    public GameObject trasure;
+    [SerializeField]
+    public GameObject treasure;
 
     public override void OnStart()
     {
         victim = user.transform.GetComponent<Thief>().GetNearestVictim();
-        trasure = victim.GetComponent<SalaryMan>().pokeball;
+        Debug.Log("Victim: "+victim.name);
+        treasure = victim.GetComponent<SalaryMan>().pokeball;
+        Debug.Log("Treasure: " + treasure.name);
+        //Debug.Log("AAA");
     }
 
     public override TaskStatus OnUpdate()

@@ -3,6 +3,7 @@ using UnityEngine;
 using Pada1.BBCore;
 using Pada1.BBCore.Framework;
 using Pada1.BBCore.Tasks;
+using UnityEngine.AI;
 
 [Action("Vector3/GetRandomPositionAround")]
 public class GetRandomPosAround : BasePrimitiveAction
@@ -23,6 +24,10 @@ public class GetRandomPosAround : BasePrimitiveAction
     [SerializeField]
     private float radius;
 
+    [InParam("slow speed")]
+    [SerializeField] 
+    private float slowSpeed;
+
     [OutParam("randomPosition")]
     [Help("Position randomly taken from the area")]
     public Vector3 randomPosition { get; set; }
@@ -34,6 +39,7 @@ public class GetRandomPosAround : BasePrimitiveAction
         randomPosition = new Vector3(aroundTarget.transform.position.x + Random.insideUnitSphere.x, targetPosY, aroundTarget.transform.position.z + Random.insideUnitSphere.z);
         // Debug.DrawLine(user.transform.position, randomPosition, Color.yellow);
         targetPosObj.transform.position = randomPosition;
+        user.GetComponent<NavMeshAgent>().speed = slowSpeed;
     }
 
     public override TaskStatus OnUpdate()

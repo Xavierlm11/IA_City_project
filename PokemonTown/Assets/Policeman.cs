@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class Policeman : MonoBehaviour
 {
     public NavMeshAgent navMesh;
-    public Transform target;
+
+    public bool hasRealized;
 
     void Start()
     {
@@ -15,6 +16,11 @@ public class Policeman : MonoBehaviour
 
     private void Update()
     {
-        navMesh.destination = target.position;
     }
+
+    public void Realize()
+    {
+        hasRealized = true;
+    }
+
 }
