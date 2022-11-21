@@ -35,6 +35,7 @@ public class SalaryMan : MonoBehaviour
     public void Realize()
     {
         hasRealized = true;
+        gameObject.GetComponent<Animator>().SetTrigger("SetIdle");
         if (Vector3.Distance(cop.transform.position, transform.position) < screamRadius)
         {
             cop.GetComponent<Policeman>().Realize();
