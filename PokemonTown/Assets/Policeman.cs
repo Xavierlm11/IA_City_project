@@ -14,10 +14,6 @@ public class Policeman : MonoBehaviour
         navMesh = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
-    {
-    }
-
     public void Realize()
     {
         hasRealized = true;

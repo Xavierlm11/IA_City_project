@@ -20,13 +20,13 @@ public class IsCopFar : ConditionBase
     [SerializeField]
     private GameObject thief;
 
-    [InParam("medium speed")]
-    [SerializeField]
-    private float mediumSpeed;
+    //[InParam("medium speed")]
+    //[SerializeField]
+    //private float mediumSpeed;
 
-    [InParam("fast speed")]
-    [SerializeField]
-    private float fastSpeed;
+    //[InParam("fast speed")]
+    //[SerializeField]
+    //private float fastSpeed;
 
     [InParam("distance")]
     [SerializeField]
@@ -40,13 +40,13 @@ public class IsCopFar : ConditionBase
         {
             Debug.DrawLine(cop.transform.position, treasure.transform.position, Color.green);
             //Debug.Log("NO NO NO");
-            thief.GetComponent<NavMeshAgent>().speed = mediumSpeed;
+            //thief.GetComponent<NavMeshAgent>().speed = mediumSpeed;
         }
         else
         {
             Debug.DrawLine(cop.transform.position, treasure.transform.position, Color.red);
             //Debug.Log("YES YES YES");
-            thief.GetComponent<NavMeshAgent>().speed = fastSpeed;
+            //thief.GetComponent<NavMeshAgent>().speed = fastSpeed;
         }
 
         
