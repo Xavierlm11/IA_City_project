@@ -15,6 +15,10 @@ public class GetTreasure : BasePrimitiveAction
     [SerializeField]
     private GameObject treasure;
 
+    [InParam("victim")]
+    [SerializeField]
+    private GameObject victim;
+
     public override void OnStart()
     {
         treasure.transform.parent = user.GetComponent<Thief>().pokeballParent.transform;
@@ -22,6 +26,7 @@ public class GetTreasure : BasePrimitiveAction
         treasure.transform.localScale = new Vector3(1, 1, 1);
         user.transform.GetComponent<Thief>().hasTreasure = true;
         user.transform.GetComponent<Thief>().pokeball = treasure;
+        user.transform.GetComponent<Thief>().currentVictim = victim;
         //Debug.Log("STEAL");
     }
 

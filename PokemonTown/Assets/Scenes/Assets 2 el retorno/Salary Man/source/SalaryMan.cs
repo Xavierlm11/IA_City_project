@@ -24,24 +24,45 @@ public class SalaryMan : MonoBehaviour
     [SerializeField] private GameObject cop;
     [SerializeField] private float screamRadius;
 
+    public bool hasChecked = false;
+
     public void SpawnTreasure()
     {
         pokeball = Instantiate(pokeballPrefab, pokeballParent.transform);
         pokeball.GetComponent<Pokeball>().owner = transform.gameObject;
         thief.GetComponent<Thief>().pokeballList.Add(pokeball);
+       
         Debug.Log("Spawneedd");
     }
 
     public void Realize()
     {
+       // hasChecked = true;
         hasRealized = true;
         gameObject.GetComponent<Animator>().SetTrigger("SetIdle");
         if (Vector3.Distance(cop.transform.position, transform.position) < screamRadius)
         {
             cop.GetComponent<Policeman>().Realize();
-            print("SCREAAAAAAMM");
+            //print("SCREAAAAAAMM");
+            Scream();
         }
     }
+
+    public void Scream()
+    {
+        print("Stay Init");
+        Stay();
+        print("Stay Final");
+    }
+
+    IEnumerator Stay()
+    {
+        //target.position = gameObject.transform.position;
+        gameObject.GetComponent<NavMeshAgent>().destination = transform.position;
+        yield return new WaitForSeconds(20);
+
+    }
+
 
     void Start()
     {

@@ -16,15 +16,17 @@ public class HideTreasure : BasePrimitiveAction
     [SerializeField]
     private GameObject victim;
 
-    //[OutParam("treasure")]
-    //[SerializeField]
-    //public GameObject treasure;
+    [InParam("cop")]
+    [SerializeField]
+    private GameObject cop;
 
     public override void OnStart()
     {
         user.transform.GetComponent<Thief>().HideTreasure();
         victim.transform.GetComponent<SalaryMan>().SpawnTreasure();
         user.transform.GetComponent<Thief>().hasThrown = true;
+        cop.transform.GetComponent<Policeman>().hasRealized = false;
+        victim.transform.GetComponent<SalaryMan>().hasChecked = false;
     }
 
     public override TaskStatus OnUpdate()

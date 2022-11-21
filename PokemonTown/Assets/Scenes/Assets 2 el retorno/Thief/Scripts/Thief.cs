@@ -41,6 +41,8 @@ public class Thief : MonoBehaviour
 
     public bool hasThrown;
 
+    public GameObject currentVictim;
+
     public void Start()
     {
         hidingSpots = GameObject.FindGameObjectsWithTag("hide");
@@ -124,6 +126,20 @@ public class Thief : MonoBehaviour
         pokeballList.Remove(pokeball);
         pokeball = null;
         hasTreasure = false;
+        currentVictim = null;
+    }
+
+    public void DestroyTreasure()
+    {
+        
+        pokeballList.Remove(pokeball);
+        Destroy(pokeball);
+        pokeball = null;
+        hasTreasure = false;
+        hasThrown = true;
+        //currentVictim = null;
+        //print("Destroyed");
+
     }
 
     public void Hide()

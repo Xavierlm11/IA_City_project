@@ -17,21 +17,29 @@ public class HasTheVictimRealized : ConditionBase
 
     public override bool Check()
     {
-        bool hasRealized;
+        bool hasRealized = false;
 
-        int num = Random.Range(0, 2);
+        int num = Random.Range(0, 1);
+        Debug.Log(victim.name);
 
-        if (num == 0)
+        if (victim.GetComponent<SalaryMan>().hasChecked==false)
         {
-            hasRealized = true;
-            victim.GetComponent<SalaryMan>().Realize();
-            Debug.Log("Realized");
+            if (num == 0)
+            {
+                hasRealized = true;
+                victim.GetComponent<SalaryMan>().Realize();
+                Debug.Log("Realized");
+            }
+            else
+            {
+                hasRealized = false;
+                Debug.Log("Not Realized");
+                //victim.GetComponent<SalaryMan>().hasChecked = true;
+            }
+
+           // victim.GetComponent<SalaryMan>().hasChecked = true;
         }
-        else
-        {
-            hasRealized = false;
-            Debug.Log("Not Realized");
-        }
+        
 
         return hasRealized;
     }
