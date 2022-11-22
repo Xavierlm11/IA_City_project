@@ -101,7 +101,6 @@ public class Thief : MonoBehaviour
                 {
                     if (((x > plane.bounds.min.x) && (x < plane.bounds.min.x + plane.bounds.size.x)) && ((z > plane.bounds.min.z) && (z < plane.bounds.min.z + plane.bounds.size.z)))
                     {
-                        //print("Inside");
                         isValidThisTime = false;
                     }
                 }
@@ -116,8 +115,6 @@ public class Thief : MonoBehaviour
         }
 
         return new Vector3(x, transform.position.y, z);
-        //target.position = new Vector3(x, transform.position.y, z);
-        //navMesh.destination = target.position;
     }
 
     public void HideTreasure()
@@ -139,8 +136,6 @@ public class Thief : MonoBehaviour
         hasTreasure = false;
         hasThrown = true;
         hasGoal = false;
-        //currentVictim = null;
-        //print("Destroyed");
 
     }
 
@@ -150,12 +145,6 @@ public class Thief : MonoBehaviour
         {
             return;
         }
-        //Func<GameObject, float> distance =
-        //    (hs) => Vector3.Distance(gameObject.transform.position,
-        //                             hs.transform.position);
-        //distantGoal = goalSpots.Select(
-        //    ho => (distance(ho), ho)
-        //    ).Max().Item2;
 
         float initialDistance = 0;
         int goalIndex = -1;
@@ -174,39 +163,9 @@ public class Thief : MonoBehaviour
             }
         }
 
-
-        
-
-
-        //Vector3 dir = hidingSpot.transform.position - gameObject.transform.position;
-        //Ray backRay = new Ray(hidingSpot.transform.position, -dir.normalized);
-        //RaycastHit info;
-        //hidingSpot.GetComponent<Collider>().Raycast(backRay, out info, 50f);
-        //// gameObject.transform.Translate(info.point + dir.normalized);
-        
         target.position = goalSpots[goalIndex].transform.position;
         escapePos = goalSpots[goalIndex].transform.position;
-        //navMesh.destination = goalSpots[goalIndex].transform.position;
         hasGoal = true;
-        //Seek(info.point + dir.normalized);
-
-
-
-        //Func<GameObject, float> distance =
-        //    (hs) => Vector3.Distance(gameObject.transform.position,
-        //                             hs.transform.position);
-        //hidingSpot = hidingSpots.Select(
-        //    ho => (distance(ho), ho)
-        //    ).Min().Item2;
-        //Vector3 dir = hidingSpot.transform.position - gameObject.transform.position;
-        //Ray backRay = new Ray(hidingSpot.transform.position, -dir.normalized);
-        //RaycastHit info;
-        //hidingSpot.GetComponent<Collider>().Raycast(backRay, out info, 50f);
-        //// gameObject.transform.Translate(info.point + dir.normalized);
-
-        //target.position = info.point + dir.normalized;
-        //navMesh.destination = info.point + dir.normalized;
-        ////Seek(info.point + dir.normalized);
     }
 
 }

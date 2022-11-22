@@ -25,15 +25,9 @@ public class EscapeRunning : BasePrimitiveAction
 
     public override void OnStart()
     {
-        //Vector3 copDir = (cop.transform.position-user.transform.position);
-        //escapePosition = user.transform.GetComponent<Thief>().NewPos(escapeDistance);
-        //target.transform.position = escapePosition;
-        Debug.Log("AAAAAA");
         user.transform.GetComponent<NavMeshAgent>().speed = runSpeed;
         user.transform.GetComponent<Thief>().Hide();
         escapePosition = user.transform.GetComponent<Thief>().escapePos;
-
-        //victim.GetComponent<SalaryMan>().hasChecked = true;
     }
 
     public override TaskStatus OnUpdate()

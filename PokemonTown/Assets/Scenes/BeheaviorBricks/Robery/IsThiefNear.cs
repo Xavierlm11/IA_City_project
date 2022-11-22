@@ -22,7 +22,6 @@ public class IsThiefNear : ConditionBase
     public override bool Check()
     { 
         bool isNear = Vector3.Distance(thief.transform.position, victim.transform.position) < distance;
-        //Debug.Log(isNear.ToString()+"..."+ Vector3.Distance(thief.transform.position, victim.transform.position).ToString());
 
         return isNear;
     }

@@ -22,10 +22,7 @@ public class SetVictim : BasePrimitiveAction
     public override void OnStart()
     {
         victim = user.transform.GetComponent<Thief>().GetNearestVictim();
-        Debug.Log("Victim: "+victim.name);
         treasure = victim.GetComponent<SalaryMan>().pokeball;
-        Debug.Log("Treasure: " + treasure.name);
-        //Debug.Log("AAA");
     }
 
     public override TaskStatus OnUpdate()

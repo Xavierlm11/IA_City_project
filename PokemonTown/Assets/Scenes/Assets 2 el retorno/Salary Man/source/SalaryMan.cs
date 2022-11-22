@@ -31,8 +31,6 @@ public class SalaryMan : MonoBehaviour
         pokeball = Instantiate(pokeballPrefab, pokeballParent.transform);
         pokeball.GetComponent<Pokeball>().owner = transform.gameObject;
         thief.GetComponent<Thief>().pokeballList.Add(pokeball);
-       
-        Debug.Log("Spawneedd");
     }
 
     public bool CheckRealize()
@@ -42,9 +40,9 @@ public class SalaryMan : MonoBehaviour
         if (hasChecked == false)
         {
 
-            int num = Random.Range(0, 2);
+            int num = Random.Range(0, 100);
 
-                if (num == 0)
+                if (num < 60)
                 {
                     hasRealizedCopy = true;
                     hasRealized = true;
@@ -56,7 +54,6 @@ public class SalaryMan : MonoBehaviour
                     hasRealizedCopy = false;
                     hasRealized = false;
                     Debug.Log("Not Realized");
-                    //victim.GetComponent<SalaryMan>().hasChecked = true;
                 }
 
             hasChecked = true;
@@ -67,30 +64,20 @@ public class SalaryMan : MonoBehaviour
 
     public void Realize()
     {
-        //hasChecked = true;
-        //hasRealized = true;
-        //gameObject.GetComponent<Animator>().SetBool("IsIdle", true);
         if (Vector3.Distance(cop.transform.position, transform.position) < screamRadius)
         {
             cop.GetComponent<Policeman>().Realize();
-            //print("SCREAAAAAAMM");
             Stop();
         }
     }
 
     public void Stop()
     {
-        print("Stay Init");
-        
         StartCoroutine("Stay");
-       
-        print("Stay Final");
-        //hasChecked = true;
     }
 
     IEnumerator Stay()
     {
-        //target.position = gameObject.transform.position;
         gameObject.GetComponent<Animator>().SetBool("IsIdle", true);
         gameObject.GetComponent<NavMeshAgent>().isStopped = true;
         yield return new WaitForSeconds(3);
@@ -112,6 +99,11 @@ public class SalaryMan : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(target.position, targetRadius);
 
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, screamRadius);
     }
 
