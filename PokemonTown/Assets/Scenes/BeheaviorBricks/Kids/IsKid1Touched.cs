@@ -15,9 +15,11 @@ public class IsKid1Touched : ConditionBase
     [SerializeField]
     private GameObject OtherKid2;
 
-    
+    [InParam("CanFollow")]
+    [SerializeField]
+    private bool CanFoll;
 
-   // private Kid1Blackboard K1B ;
+    // private Kid1Blackboard K1B ;
 
     //private Kid2Blackboard K2B;
     public override bool Check()
@@ -29,15 +31,15 @@ public class IsKid1Touched : ConditionBase
         bool touch = user.GetComponent<Kid1Blackboard>()._IsTouched;
 
 
-       if( Vector3.Distance(user.transform.position, OtherKid2.transform.position) < 3f)
+       if( (Vector3.Distance(user.transform.position, OtherKid2.transform.position) < 3f) && !touch)
         {
             user.GetComponent< Kid1Blackboard >()._IsTouched = true;
             OtherKid2.GetComponent<Kid2Blackboard>()._IsTouched = false;
         }
 
+        CanFoll = touch;
 
-
-        Debug.Log("aaaaaaa");
+       // Debug.Log("aaaaaaa");
 
         return touch;
 
