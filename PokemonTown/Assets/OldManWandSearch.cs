@@ -25,6 +25,7 @@ public class OldManWandSearch : StateMachineBehaviour
             {
                 ODBlackBoard.target = bench;
                 animator.SetTrigger("serch");
+                
                 Debug.Log(ODBlackBoard.target.ToString());
                 break;
             }
