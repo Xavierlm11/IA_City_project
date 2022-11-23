@@ -35,6 +35,8 @@ public class IsKid1Touched : ConditionBase
             OtherKid2.GetComponent<Kid2Blackboard>()._IsTouched = false;
         }
 
+
+
         Debug.Log("aaaaaaa");
 
         return touch;
