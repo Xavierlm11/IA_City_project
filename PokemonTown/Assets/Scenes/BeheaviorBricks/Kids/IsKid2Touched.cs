@@ -11,7 +11,7 @@ public class IsKid2Touched : ConditionBase
     [SerializeField]
     private GameObject user;
 
-    [InParam("OtherKid1")]
+    [InParam("OtherKid")]
     [SerializeField]
     private GameObject OtherKid1;
 
@@ -28,13 +28,14 @@ public class IsKid2Touched : ConditionBase
        // K1B = a.GetComponent<Kid1Blackboard>();
         // GameObject kid1 = GameObject.Find("kid1");
         // GameObject OtherKid = GameObject.Find("OtherKid2");
-        bool touch = user.GetComponent<Kid2Blackboard>()._IsTouched;
+        bool touch = false;
         
 
-       if( (Vector3.Distance(user.transform.position, OtherKid1.transform.position) < 3f) && !touch)
+       if( (Vector3.Distance(user.transform.position, OtherKid1.transform.position) < 3f) && !user.GetComponent<Kid2Blackboard>()._CanTouched)
         {
-            user.GetComponent< Kid2Blackboard >()._IsTouched = true;
-            OtherKid1.GetComponent<Kid1Blackboard>()._IsTouched = false;
+            touch = true;
+            user.GetComponent<Kid2Blackboard>()._CanTouched = touch;
+            //OtherKid1.GetComponent<Kid1Blackboard>()._IsTouched = false;
 
         }
         CanFoll = touch;

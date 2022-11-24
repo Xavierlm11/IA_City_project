@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -609,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9171852979243603004, guid: fb20401abb359f44cb24a5b0179b6691, type: 3}
       propertyPath: m_Name
-      value: Kid-1 Variant
+      value: Kid1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb20401abb359f44cb24a5b0179b6691, type: 3}
@@ -751,8 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _IsTouched: 0
-  CanTouched: 0
-  _animator: {fileID: 0}
+  _CanTouched: 0
 --- !u!1 &267020228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 855571558}
   endOfPathInstruction: 0
-  speed: 26
+  speed: 20.5
 --- !u!135 &340996436
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1339,12 +1338,20 @@ PrefabInstance:
       value: KidLider2
       objectReference: {fileID: 0}
     - target: {fileID: 406131030, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
+      propertyPath: m_Speed
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 406131030, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
       propertyPath: m_AgentTypeID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 406131030, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
+      propertyPath: m_Acceleration
+      value: 17.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2433743586881569413, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
       propertyPath: m_Name
-      value: Kid-2 Variant
+      value: Kid2
       objectReference: {fileID: 0}
     - target: {fileID: 3066305148155746367, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
       propertyPath: m_RootOrder
@@ -1352,7 +1359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066305148155746367, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.4
+      value: -22.88
       objectReference: {fileID: 0}
     - target: {fileID: 3066305148155746367, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1360,7 +1367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066305148155746367, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.2
+      value: -19.08
       objectReference: {fileID: 0}
     - target: {fileID: 3066305148155746367, guid: ad435a2b982ad9b46bd2f67c6478d945, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3044,8 +3051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _IsTouched: 0
-  CanTouched: 0
-  _animator: {fileID: 0}
+  _CanTouched: 1
 --- !u!1 &976167323 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3128709532773424336, guid: 2735fc678638f0f4d8fde6e8d3d25cb2, type: 3}
@@ -8906,7 +8912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 855571558}
   endOfPathInstruction: 0
-  speed: -26
+  speed: -20.62
 --- !u!135 &1892588101
 SphereCollider:
   m_ObjectHideFlags: 0
