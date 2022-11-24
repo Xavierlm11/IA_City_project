@@ -463,7 +463,7 @@ MonoBehaviour:
     <BehaviorTree id=\"10\" />\r\n          <ConditionEvalNode id=\"58\" />\r\n         
     <PrioritySelectorNode id=\"10\" />\r\n        </data>\r\n      </_data>\r\n   
     </ConditionEvalNode>\r\n    <ActionNode id=\"57\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"True\" position=\"1617.85 12.67101\" name=\"Animation/PlayAnimation\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"1617.85 12.67101\" name=\"Animation/PlayAnimation\"
     description=\"Plays an animation in the game object\" cardinality=\"0\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"57\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ActionNode id=\"79\">\r\n      <_data>\r\n       
@@ -472,7 +472,7 @@ MonoBehaviour:
     id=\"0\" />\r\n          <ActionNode id=\"79\" />\r\n          <SequenceNode
     id=\"74\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <PrioritySelectorNode id=\"77\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"249.5675 23.671\" name=\"Priority Selector\" description=\"\"
+    selected=\"True\" position=\"249.5675 23.671\" name=\"Priority Selector\" description=\"\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <PrioritySelectorNode id=\"77\" />\r\n          <SequenceNode id=\"74\" />\r\n       
     </data>\r\n      </_data>\r\n    </PrioritySelectorNode>\r\n    <ActionNode id=\"83\">\r\n     
