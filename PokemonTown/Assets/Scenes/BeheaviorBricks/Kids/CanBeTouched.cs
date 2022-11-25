@@ -18,26 +18,10 @@ public class CanBeTouched : ConditionBase
     [InParam("User")]
     [SerializeField]
     private GameObject user1;
-    // private Kid1Blackboard K1B ;
-
-    //private Kid2Blackboard K2B;
+ 
     public override bool Check()
     {
-        //Animator a ;
-        // K1B = a.GetComponent<Kid1Blackboard>();
-        // GameObject kid1 = GameObject.Find("kid1");
-        // GameObject OtherKid = GameObject.Find("OtherKid2");
-        // bool touch = user.GetComponent<Kid2Blackboard>()._IsTouched;
-
-
-        //if( Vector3.Distance(user.transform.position, OtherKid1.transform.position) < 3f)
-        // {
-        //     user.GetComponent< Kid2Blackboard >()._IsTouched = true;
-        //     OtherKid1.GetComponent<Kid1Blackboard>()._IsTouched = false;
-        // }
-
-        //Debug.Log("aaaaaaa");
-
+ 
         if (user1.name=="Kid1")
         {
             if (other.GetComponent<Kid2Blackboard>()._CanTouched && user1.GetComponent<Kid1Blackboard>()._CanTouched

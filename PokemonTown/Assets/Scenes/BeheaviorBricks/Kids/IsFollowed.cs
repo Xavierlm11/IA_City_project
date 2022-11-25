@@ -29,22 +29,7 @@ public class IsFollowed : ConditionBase
                 followed = true;
 
             }
-            //if(!user._CanTouched)
-            //{
-            //    Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAA");
-            //}
-            //if (!user._CanTouched && !other._CanTouched)
-            //{
-            //    other.SendMessage("CanTouch");
-            //    followed = true;
-
-            //}
-            //if (user._CanTouched && other._CanTouched)
-            //{
-            //    user.CantTouch();
-            //    followed = true;
-
-            //}
+            
         }
         if (user2.name == "Kid1")
         {

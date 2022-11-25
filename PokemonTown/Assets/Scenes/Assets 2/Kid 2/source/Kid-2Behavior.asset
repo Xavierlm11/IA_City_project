@@ -36,7 +36,7 @@ MonoBehaviour:
     <ParallelNode id=\"40\" />\r\n            </child>\r\n          </GuardAndNode>\r\n       
     </elem>\r\n      </children>\r\n      <inputParams />\r\n      <outputParams
     />\r\n      <localParams />\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode
-    id=\"22\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"MyConditions/Is Followed?\">\r\n     
+    id=\"22\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"MyConditions/Is Followed?\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"user\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"user\" />\r\n          <entry name=\"OtherKid\"
     type=\"UnityEngine.GameObject\" isBlackboard=\"True\" blackboard=\"OtherKid1\"

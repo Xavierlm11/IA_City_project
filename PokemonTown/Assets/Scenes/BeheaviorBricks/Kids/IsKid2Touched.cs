@@ -29,10 +29,10 @@ public class IsKid2Touched : ConditionBase
        if( (Vector3.Distance(user.transform.position, OtherKid1.transform.position) < 3f) && OtherKid1.GetComponent<Kid1Blackboard>()._CanTouched)
         {
             touch = true;
-           // user.GetComponent<Kid2Blackboard>()._CanTouched = touch;
+          
             OtherKid1.SendMessage("CantTouch");
             user.GetComponent<Kid2Blackboard>().Stop();
-            //OtherKid1.GetComponent<Kid1Blackboard>()._IsTouched = false;
+          
 
         }
         CanFoll = touch;
