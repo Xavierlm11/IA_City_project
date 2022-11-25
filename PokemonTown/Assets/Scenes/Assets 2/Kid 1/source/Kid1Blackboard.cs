@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class Kid1Blackboard : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -27,5 +27,20 @@ public class Kid1Blackboard : MonoBehaviour
     public void CantTouch()
     {
         _CanTouched = false;
+    }
+    public void Stop()
+    {
+        StartCoroutine("Stay");
+    }
+
+    IEnumerator Stay()
+    {
+        //gameObject.GetComponent<Animator>().SetTrigger("IsTouched");
+        gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+        yield return new WaitForSeconds(5);
+        //gameObject.GetComponent<Animator>().SetTrigger("Run");
+        gameObject.GetComponent<NavMeshAgent>().isStopped = false;
+        CanTouch();
+
     }
 }
