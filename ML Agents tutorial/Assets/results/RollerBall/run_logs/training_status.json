@@ -1,0 +1,56 @@
+{
+    "RollerBall": {
+        "checkpoints": [
+            {
+                "steps": 2402,
+                "file_path": "results\\RollerBall\\RollerBall\\RollerBall-2402.onnx",
+                "reward": -1.0,
+                "creation_time": 1671904743.4881773,
+                "auxillary_file_paths": [
+                    "results\\RollerBall\\RollerBall\\RollerBall-2402.pt"
+                ]
+            },
+            {
+                "steps": 11150,
+                "file_path": "results\\RollerBall\\RollerBall\\RollerBall-11150.onnx",
+                "reward": null,
+                "creation_time": 1671906939.440967,
+                "auxillary_file_paths": [
+                    "results\\RollerBall\\RollerBall\\RollerBall-11150.pt"
+                ]
+            },
+            {
+                "steps": 166755,
+                "file_path": "results\\RollerBall\\RollerBall\\RollerBall-166755.onnx",
+                "reward": -1.0000000298023224,
+                "creation_time": 1671908636.7382727,
+                "auxillary_file_paths": [
+                    "results\\RollerBall\\RollerBall\\RollerBall-166755.pt"
+                ]
+            },
+            {
+                "steps": 246121,
+                "file_path": "results\\RollerBall\\RollerBall\\RollerBall-246121.onnx",
+                "reward": null,
+                "creation_time": 1671909294.5195746,
+                "auxillary_file_paths": [
+                    "results\\RollerBall\\RollerBall\\RollerBall-246121.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 246121,
+            "file_path": "results\\RollerBall\\RollerBall.onnx",
+            "reward": null,
+            "creation_time": 1671909294.5195746,
+            "auxillary_file_paths": [
+                "results\\RollerBall\\RollerBall\\RollerBall-246121.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.10.2+cpu"
+    }
+}
