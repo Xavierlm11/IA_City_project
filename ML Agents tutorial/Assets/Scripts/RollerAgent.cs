@@ -78,7 +78,7 @@ public class RollerAgent : Agent
         // Reached target
         if (distanceToTarget < targetCol)
         {
-            SetReward(1.0f);
+            SetReward(8.0f);
             EndEpisode();
         }
 

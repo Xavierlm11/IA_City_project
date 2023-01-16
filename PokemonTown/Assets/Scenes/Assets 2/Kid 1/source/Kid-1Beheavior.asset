@@ -50,7 +50,7 @@ MonoBehaviour:
     <ParallelNode id=\"45\" />\r\n            </child>\r\n          </GuardAndNode>\r\n       
     </elem>\r\n      </children>\r\n      <inputParams />\r\n      <outputParams
     />\r\n      <localParams />\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode
-    id=\"49\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"AlwaysTrue\">\r\n     
+    id=\"49\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"AlwaysTrue\">\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
     <ParallelNode id=\"48\" policy=\"AndPolicy\">\r\n      <children>\r\n       
     <elem>\r\n          <ActionNode id=\"50\" />\r\n        </elem>\r\n        <elem>\r\n         
