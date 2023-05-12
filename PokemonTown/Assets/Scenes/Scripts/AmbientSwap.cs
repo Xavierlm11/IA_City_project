@@ -19,7 +19,7 @@ public class AmbientSwap : MonoBehaviour
         { 
             indorSnap.TransitionTo(slowTransitionTime); 
         }
-         if (collider.tag == "Atention") 
+        if (collider.tag == "Atention") 
         {
             atentionSnap.TransitionTo(transitionTime); 
         }

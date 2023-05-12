@@ -23,6 +23,14 @@ public class Diglett : MonoBehaviour
     [SerializeField] private Transform seeker;
     [SerializeField] private float rotationSpeed;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip[] digletOnPlant;
+
+    void Start() 
+    { 
+        audioSource = GetComponent<AudioSource>(); 
+    }
+
     void Update()
     {
         if (isUp == true)
@@ -68,7 +76,12 @@ public class Diglett : MonoBehaviour
 
     private void Appear()
     {
-
+        audioSource.volume = Random.Range(0.9f, 1.0f);
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        if (digletOnPlant.Length > 0)
+        {
+            audioSource.PlayOneShot(digletOnPlant[Random.Range(0, digletOnPlant.Length)]);
+        }
         hasToAppear = true;
 
        // seeker.GetComponent<NavMeshAgent>().destination = transform.position;
