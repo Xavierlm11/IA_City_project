@@ -11,8 +11,10 @@ public class SetGroundType : MonoBehaviour
         switch (col.gameObject.tag)
         {
             case "Grass":
+            case "Plant":
             case "Road":
             case "Water":
+            case "Center":
                 footstepObject.groundType = col.gameObject.tag;
                 break;
 

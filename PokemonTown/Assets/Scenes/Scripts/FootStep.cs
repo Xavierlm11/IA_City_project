@@ -5,8 +5,10 @@ using UnityEngine;
 public class FootStep : MonoBehaviour
 {
     [SerializeField] private AudioClip[] footstepsOnGrass;
+    [SerializeField] private AudioClip[] footstepsOnPlant;
     [SerializeField] private AudioClip[] footstepsOnRoad;
     [SerializeField] private AudioClip[] footstepsOnWater;
+    [SerializeField] private AudioClip[] footstepsOnCenter;
 
     public string groundType;
 
@@ -25,6 +27,13 @@ public class FootStep : MonoBehaviour
                 }
                 break;
 
+            case "Plant":
+                if (footstepsOnPlant.Length > 0)
+                {
+                    audioSource.PlayOneShot(footstepsOnPlant[Random.Range(0, footstepsOnPlant.Length)]);
+                }
+                break;
+
             case "Road":
                 if (footstepsOnRoad.Length > 0)
                 {
@@ -36,6 +45,13 @@ public class FootStep : MonoBehaviour
                 if (footstepsOnWater.Length > 0)
                 {
                     audioSource.PlayOneShot(footstepsOnWater[Random.Range(0, footstepsOnWater.Length)]);
+                }
+                break;
+
+            case "Center":
+                if (footstepsOnCenter.Length > 0)
+                {
+                    audioSource.PlayOneShot(footstepsOnCenter[Random.Range(0, footstepsOnCenter.Length)]);
                 }
                 break;
 
