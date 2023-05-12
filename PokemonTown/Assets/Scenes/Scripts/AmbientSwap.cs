@@ -21,7 +21,7 @@ public class AmbientSwap : MonoBehaviour
         }
          if (collider.tag == "Atention") 
         {
-            atentionSnap.TransitionTo(fastTransitionTime); 
+            atentionSnap.TransitionTo(transitionTime); 
         }
         
 
@@ -35,7 +35,7 @@ public class AmbientSwap : MonoBehaviour
         }
         if (collider.tag == "Atention")
         {
-            outdoorSnap.TransitionTo(fastTransitionTime);
+            outdoorSnap.TransitionTo(transitionTime);
         }
     }
 }
