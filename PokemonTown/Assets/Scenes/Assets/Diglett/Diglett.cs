@@ -71,7 +71,7 @@ public class Diglett : MonoBehaviour
 
         hasToAppear = true;
 
-        seeker.GetComponent<NavMeshAgent>().destination = transform.position;
+       // seeker.GetComponent<NavMeshAgent>().destination = transform.position;
                                      
 
     }

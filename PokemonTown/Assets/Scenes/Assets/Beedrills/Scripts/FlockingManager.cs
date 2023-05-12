@@ -45,7 +45,6 @@ public class FlockingManager : MonoBehaviour
             bid.transform.position = beeFolder.position + randomPos;
             activeFlockMovement = bid.GetComponent<FlockMovement>();
             activeFlockMovement.flockManager = this;
-            activeFlockMovement.runnerManager = runnerManager;
             activeFlockMovement.beeSpawn = beeSpawn;
            // activeFlockMovement.cohesionScale = cohesionScale;
            // activeFlockMovement.separationScale = separationScale;

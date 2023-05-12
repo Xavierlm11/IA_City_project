@@ -24,8 +24,6 @@ public class FlockMovement : MonoBehaviour
 
     [SerializeField] private float freq;
 
-    public RunnerManager runnerManager;
-
     public GameObject beeSpawn;
 
 
@@ -77,18 +75,6 @@ public class FlockMovement : MonoBehaviour
             speed = Mathf.Clamp(alignVec.magnitude, flockManager.minSpeed, flockManager.maxSpeed);
 
             cohesionVec = (cohesionVec / nearBees - transform.position).normalized * flockManager.speed;
-        }
-
-        foreach (GameObject run in runnerManager.runnerList)
-        {
-            float distance = Vector3.Distance(run.transform.position, transform.position);
-            if (distance <= flockManager.runnerDistance)
-            {
-                seekVec += run.transform.position;
-                
-
-                nearRunners++;
-            }
         }
 
         if(nearRunners > 0)

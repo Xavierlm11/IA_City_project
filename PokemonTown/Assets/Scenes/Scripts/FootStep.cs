@@ -5,15 +5,16 @@ using UnityEngine;
 public class FootStep : MonoBehaviour
 {
     [SerializeField] private AudioClip[] footstepsOnGrass;
-    [SerializeField] private AudioClip[] footstepsOnPath;
+    [SerializeField] private AudioClip[] footstepsOnRoad;
+    [SerializeField] private AudioClip[] footstepsOnWater;
 
-    private string groundType;
+    public string groundType;
 
     void FootStepSound() 
     {
         AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.volume = Random.Range(0.8f, 1.2f);
-        audioSource.pitch = Random.Range(0.8f, 1.2f);
+        audioSource.volume = Random.Range(0.9f, 1.0f);
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
 
         switch (groundType)
         {
@@ -24,10 +25,17 @@ public class FootStep : MonoBehaviour
                 }
                 break;
 
-            case "Path":
-                if (footstepsOnPath.Length > 0)
+            case "Road":
+                if (footstepsOnRoad.Length > 0)
                 {
-                    audioSource.PlayOneShot(footstepsOnPath[Random.Range(0, footstepsOnPath.Length)]);
+                    audioSource.PlayOneShot(footstepsOnRoad[Random.Range(0, footstepsOnRoad.Length)]);
+                }
+                break;
+
+            case "Water":
+                if (footstepsOnWater.Length > 0)
+                {
+                    audioSource.PlayOneShot(footstepsOnWater[Random.Range(0, footstepsOnWater.Length)]);
                 }
                 break;
 
@@ -36,19 +44,4 @@ public class FootStep : MonoBehaviour
                 break;
         }
     }
-
-    void OnCollisionEnter(Collision col)
-    {
-        switch (col.gameObject.tag)
-        {
-            case "Grass":
-            case "Path":
-                groundType = col.gameObject.tag;
-                break;
-
-            default:
-                break;
-        }
-    }
-
 }
