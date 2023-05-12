@@ -20,7 +20,7 @@ public class Diglett : MonoBehaviour
 
     private bool isUp;
 
-    [SerializeField] private Transform seeker;
+    //[SerializeField] private Transform seeker;
     [SerializeField] private float rotationSpeed;
 
     private AudioSource audioSource;
@@ -104,10 +104,10 @@ public class Diglett : MonoBehaviour
             anim.Play("Appear");
         }
 
-        Vector3 direction = (seeker.position - transform.position);
-        direction.y = 0;
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = rotation;
+        //Vector3 direction = (seeker.position - transform.position);
+        //direction.y = 0;
+        //Quaternion rotation = Quaternion.LookRotation(direction);
+        //transform.rotation = rotation;
 
     }
 
